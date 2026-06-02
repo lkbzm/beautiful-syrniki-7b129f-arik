@@ -1,0 +1,149 @@
+@import "tailwindcss" source("../");
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --color-primary: #1F4D3A;
+  --color-primary-dark: #163629;
+  --color-primary-light: #2d6b52;
+  --color-secondary: #D9C7A2;
+  --color-bg: #F8F7F4;
+  --color-text: #1A1A1A;
+  --color-text-muted: #5a5a5a;
+  --color-success: #4CAF50;
+  --color-border: #e2ddd5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+/* Grain texture overlay */
+.grain-overlay::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.035;
+}
+
+/* Smooth counter animation */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ripple effect */
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ripple::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+  opacity: 0;
+  transform: scale(0);
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.btn-ripple:active::after {
+  transform: scale(2);
+  opacity: 1;
+  transition: 0s;
+}
+
+/* Sustainability flow line */
+@keyframes flowLine {
+  0% { stroke-dashoffset: 1000; }
+  100% { stroke-dashoffset: 0; }
+}
+
+/* Hero parallax text */
+@keyframes slideFromLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Fade up */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* Section spacing */
+.section-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+/* Highlight row */
+.highlight-col {
+  position: relative;
+}
+
+.highlight-col::before {
+  content: '';
+  position: absolute;
+  inset: -4px 0;
+  background: rgba(31, 77, 58, 0.05);
+  border-radius: 8px;
+  pointer-events: none;
+}

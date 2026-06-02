@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <!-- Static form skeleton for Netlify build-time detection.
+         This file is never shown to users. It mirrors all fields
+         submitted by the React contact form in the app. -->
+    <form
+      name="wholesale-inquiry"
+      netlify
+      netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="hidden" name="form-name" value="wholesale-inquiry" />
+      <input type="text" name="bot-field" />
+      <input type="text" name="name" />
+      <input type="text" name="company" />
+      <input type="text" name="country" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <select name="businessType">
+        <option value="retailer">Sustainable Retailer</option>
+        <option value="distributor">Distributor</option>
+        <option value="importer">Importer</option>
+        <option value="marketplace">Marketplace Seller</option>
+        <option value="corporate">Corporate Buyer / ESG</option>
+        <option value="other">Other</option>
+      </select>
+      <textarea name="message"></textarea>
+      <input type="text" name="requestType" />
+    </form>
+  </body>
+</html>
