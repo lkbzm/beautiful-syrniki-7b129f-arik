@@ -420,6 +420,11 @@ function AboutSection() {
             <div className="relative">
               <div className="aspect-[4/5] rounded-3xl overflow-hidden bg-[#1F4D3A] relative">
                 <div
+                  <img
+                  src="/images.jpg"
+                  alt="Re:Bumi sandal"
+                  className="absolute inset-0 w-full h-full object-cover opacity-80"
+                  />
                   className="absolute inset-0"
                   style={{
                     backgroundImage: `
